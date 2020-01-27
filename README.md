@@ -3,6 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
 
 The webdriver.io tests are located in the country-test folder. They are in the file called country.js which is under test/specs.
+In order to run the tests, navigate to country-test.js in the terminal and run `./node_modules/.bin/wdio wdio.conf.js`.
 
 ## Development server
 
