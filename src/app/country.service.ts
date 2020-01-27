@@ -25,7 +25,6 @@ export class Country{
 export class CountryService {
 
   countries = [];
-
   constructor(private http: HttpClient) { }
   
   getAllCountriesFromServer(): Observable<Country[]>{

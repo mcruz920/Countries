@@ -15,6 +15,7 @@ export class AppComponent implements OnInit, OnDestroy{
   @Input() country: Country;
   @Input() i:number;
   countriesSub: Subscription;
+  countryBeingDisplayed: Country;
 
   constructor(private srv : CountryService, private http: HttpClient){
   }

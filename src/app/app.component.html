@@ -9,6 +9,7 @@
     </div>
   </div>
 </div>
+
 <div class="container">
   <div class="row">
     <div class="col-6" *ngFor="let country of (countries | countrySearch: filterText);">
@@ -18,10 +19,9 @@
             <div class="card-body">
               <h5 id="countryName" class="card-title">{{country?.name}}</h5>
               <p class="card-text" id="capital">
-                <strong >Capital:</strong> {{country?.capital}}
-                <br>
-              </p>
-            </div>
+                <strong *ngIf="country?.capital">Capital: {{country?.capital}}</strong> 
+                <strong *ngIf="!country?.capital">Capital: No Capital</strong> 
+            </div> 
           </div>
         </div>
       </div>
