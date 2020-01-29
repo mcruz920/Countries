@@ -97,13 +97,13 @@ describe('Should find the capital of Cambodia', () => {
     })
 })
 //testing country name with random caps
-describe('Should find the capital of India', () => {
-    it('Should find the capital of India', () => {
+describe('Should find the capital of Germany', () => {
+    it('Should find the capital of Germany', () => {
         browser.url('localhost:4200')
-        $('#ex2').addValue('iNdIA')
+        $('#ex2').addValue('gErmANY')
         const elem = $('#capital');
         console.log(elem.getText());
-        assert.strictEqual(elem.getText(), 'Capital: New Delhi')
+        assert.strictEqual(elem.getText(), 'Capital: Berlin')
     })
 })
 //testing that a country with no capital displays "no capital"
@@ -114,5 +114,16 @@ describe('Should find the capital of Antarctica', () => {
         const elem = $('#capital');
         console.log(elem.getText());
         assert.strictEqual(elem.getText(), 'Capital: No Capital')
+    })
+})
+//testing that no capital is shown when entering a number
+describe('Should not find a capital', () => {
+    it('Should not find a capital', () => {
+        browser.url('localhost:4200')
+        $('#ex2').addValue('123')
+        let elem = $('.card')
+        let isExisting = elem.isExisting()
+        console.log(isExisting);
+        assert.strictEqual(elem.isExisting(), false);
     })
 })
